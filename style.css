@@ -129,3 +129,51 @@ button:hover {
     animation:pulse 1s infinite alternate;
 
 }
+
+/************************************************************
+ PREM PICKER TEAM CARD STYLING
+************************************************************/
+
+
+.team {
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:15px;
+
+    overflow:hidden;
+
+}
+
+
+
+.club-name {
+
+    font-size:18px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.club-nickname {
+
+    font-size:14px;
+
+    font-style:italic;
+
+    opacity:0.9;
+
+    line-height:1.2;
+
+}

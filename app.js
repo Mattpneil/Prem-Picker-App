@@ -319,47 +319,88 @@ document.getElementById("resetBtn");
  ************************************************************/
 
 
+/************************************************************
+ * FUNCTION: renderTeams()
+ *
+ * Purpose:
+ * Displays all remaining Premier League clubs.
+ *
+ * Updates:
+ * - Club name
+ * - Nickname
+ * - Team color gradient
+ * - Consistent card formatting
+ *
+ ************************************************************/
+
 function renderTeams(){
 
-teamContainer.innerHTML="";
+    // Clear existing cards
+    teamContainer.innerHTML = "";
 
 
-remaining.forEach(team=>{
+    // Create card for every remaining club
+    remaining.forEach(team => {
 
 
-let card =
-document.createElement("div");
+        const card = document.createElement("div");
 
 
-card.classList.add("team");
+        card.classList.add("team");
 
 
-card.innerHTML =
+        /*
+        Creates a consistent structure:
 
-`
-<h3>${team.name}</h3>
-<p>${team.nickname}</p>
-`;
+        CLUB NAME
+        Nickname
 
+        Example:
 
-card.style.background =
-`
-linear-gradient(
-135deg,
-${team.color},
-${team.secondary}
-)
-`;
+        ARSENAL
+        The Gunners
+
+        */
 
 
-teamContainer.appendChild(card);
+        card.innerHTML =
+
+        `
+        <div class="club-name">
+            ${team.name}
+        </div>
+
+        <div class="club-nickname">
+            ${team.nickname}
+        </div>
+        `;
 
 
-});
+
+        // Apply team color gradient
+        card.style.background =
+
+        `
+        linear-gradient(
+            135deg,
+            ${team.color},
+            ${team.secondary}
+        )
+        `;
 
 
-counter.innerHTML =
-`Teams Remaining: ${remaining.length}`;
+
+        teamContainer.appendChild(card);
+
+
+    });
+
+
+
+    // Update counter
+
+    counter.innerHTML =
+    `Teams Remaining: ${remaining.length}`;
 
 }
 
